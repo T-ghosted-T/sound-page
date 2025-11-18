@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Ei Chuvak Meme</title>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+</style>
+</head>
+<body>
+
+<img src="Screenshot_20251118_214217_Samsung Internet.jpg" alt="meme">
+
+<audio id="audio" src="ei-chuvak.mp3" preload="auto"></audio>
+
+<script>
+function playAudio() {
+  const audio = document.getElementById("audio");
+  audio.volume = 1.0; // максимальная громкость плеера
+  audio.play();
+  // удаляем обработчики, чтобы звук запускался только один раз на первый тап
+  document.removeEventListener("click", playAudio);
+  document.removeEventListener("touchstart", playAudio);
+}
+document.addEventListener("click", playAudio);
+document.addEventListener("touchstart", playAudio);
+</script>
+
+</body>
+</html>
